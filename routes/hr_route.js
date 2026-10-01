@@ -1,9 +1,19 @@
 let express=require('express');
 let router=express.Router();
-
 let {users} =require('../modules/users');
+let {task} =require('../modules/task');
+router.post("/assign-task",async (req,res)=>{
+    let data=req.body;
+    let newtask=new task(data);
+    let result=await newtask.save();
+    res.send(result);
+})
 router.get("/viewemp", async (req,res)=>{
     let result=await users.find();
+    res.send(result);
+})
+router.get("/viewtasks", async (req,res)=>{
+    let result=await task.find();   
     res.send(result);
 })
 //open postman choose  get method

@@ -3,7 +3,7 @@ let app=express();
 let mongoose=require('mongoose');
 let emproutes=require('./routes/emp_route');
 let hrroutes=require('./routes/hr_route');
-mongoose.connect("mongodb://localhost:27017/hrmanagement")
+mongoose.connect("mongodb://localhost:27017/HRmanagement")
   .then(()=>console.log("db connected successfully"))
   .catch((err)=>console.log(err))
 
