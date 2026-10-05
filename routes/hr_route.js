@@ -1,7 +1,7 @@
 let express=require('express');
 let router=express.Router();
-let {users} =require('../modules/users');
-let {task} =require('../modules/task');
+let {users} =require('../models/users');
+let {task} =require('../models/task');
 router.post("/assign-task",async (req,res)=>{
     let data=req.body;
     let newtask=new task(data);
